@@ -6,10 +6,10 @@ on:
 
 #Environment variables https://docs.github.com/en/actions/learn-github-actions/environment-variables
 env:
-  RESOURCE-GROUP: my-coffee-shop
-  LOCATION: eastasia
+  RESOURCE-GROUP: Webapp-GH
+  LOCATION: centralindia
   TEMPLATE-FILE: infra/webapp.bicep
-  SUBSCRIPTION-ID: 52948927-413b-4dab-8037-1499505c03b8
+  SUBSCRIPTION-ID: a5aaffed-0d34-49c1-9bcc-788d04fec1d7
   WEBAPP-NAME: eshoponweb-webapp-for-az400sept
 
 
