@@ -2,7 +2,7 @@ name: Azure ARM
 on: 
   workflow_dispatch
 env:
-  RESOURCE-GROUP: Webapp-GH
+  RESOURCE-GROUP: mycoffee-shop
   SUBSCRIPTION-ID: a5aaffed-0d34-49c1-9bcc-788d04fec1d7
   
 jobs:
