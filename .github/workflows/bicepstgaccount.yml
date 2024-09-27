@@ -1,0 +1,28 @@
+name: Azure ARM
+on: 
+  workflow_dispatch
+env:
+  RESOURCE-GROUP: Webapp-GH
+  SUBSCRIPTION-ID: a5aaffed-0d34-49c1-9bcc-788d04fec1d7
+  
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            # Checkout code
+            - uses: actions/checkout@main
+
+              # Log into Azure
+            - uses: azure/login@v1
+              with:
+                  creds: ${{ secrets.BICEP_CRED }}
+
+              # Deploy Bicep file
+            - name: deploy
+              uses: azure/arm-deploy@v1
+              with:
+                  subscriptionId: ${{ env.SUBSCRIPTION-ID }}
+                  resourceGroupName: ${{ env.RESOURCE-GROUP }}
+                  template: ./createstg.bicep
+                  parameters: storageName=mybicepstgaz400hn
+                  failOnStdErr: false
